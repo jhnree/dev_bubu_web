@@ -23,3 +23,6 @@ Route::get('/registration', function () {
     return view('Login.registration');
 });
 
+Route::get('/create-profile', function() {
+    return view('Home.standard');
+});

@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/Login/login.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('toastr/toastr.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('fontawesome-free/css/all.min.css') }}"/>
     @stack('style')
     <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{ asset('toastr/toastr.min.js') }}"></script>
     <title>Document</title>
 </head>
 <body>

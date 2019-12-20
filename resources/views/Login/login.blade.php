@@ -17,7 +17,8 @@
             <div class="text-center mb-4">
                 <h3>Login</h3>
             </div>
-            <form>
+            <form id="loginForm">
+                @csrf
                 <div class="form-group my-4">
                     <input id="username" class="form-control" type="text" name="username" placeholder="Username">
                 </div>
@@ -28,10 +29,10 @@
                     </div>
                 </div>
                 <div class="float-right checkbox mt-3">
-                    <input type="checkbox" value="None" id="keepMeLogin" name="keepMeLogin" checked />
+                    <input type="checkbox" id="keepMeLogin" name="keepMeLogin" checked />
                     <label for="keepMeLogin">Keep Me Login</label>
                 </div>
-                <button type="button" class="login-btn btn form-control mt-5">Login</button>
+                <button type="sybmit" class="login-btn btn form-control mt-5">Login</button>
             </form>
             <div class="text-center register-link">
                 <div class="pb-2">
@@ -44,12 +45,13 @@
             <div class="text-center mb-4">
                 <h3>Register</h3>
             </div>
-            <form>
+            <form id="registerForm">
+                @csrf
                 <div class="form-group my-4">
-                    <input id="regUsername" class="form-control" type="text" name="username" placeholder="Mobile No or Email">
+                    <input id="regUsername" class="form-control" type="text" id="regUsername" name="username" placeholder="Mobile No or Email">
                 </div>
                 <div class="input-group">
-                    <input class="form-control password" type="password" name="password" placeholder="Password" aria-label="Recipient's text" aria-describedby="password">
+                    <input class="form-control password" type="password" id="regPassword" name="password" placeholder="Password" aria-label="Recipient's text" aria-describedby="password">
                     <div class="input-group-append eye">
                         <span class="input-group-text"><i class="fas fa-eye-slash"></i></span>
                     </div>
@@ -57,7 +59,7 @@
                 <div id="termsAgreement" class="mt-4 mx-2">
                     <span>By clicking Register, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</span>
                 </div>
-                <button type="button" class="login-btn btn form-control mt-5">Register</button>
+                <button type="submit" class="login-btn btn form-control mt-5">Register</button>
             </form>
             <div class="text-center register-link">
                 <span>Already have an account?</span><a href="#" id="loginNow"> Login now</a>

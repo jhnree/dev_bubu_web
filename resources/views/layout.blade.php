@@ -14,7 +14,6 @@
     <title>Document</title>
 </head>
 <body>
-
     <Header class="sticky-top">
         <div>
             <img class="icon" src="{{asset('img/bubu-we-white.png')}}" alt="" srcset="">
@@ -140,7 +139,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="my-3 myMessage">
+                    <div class="my-3 myMessage"> 
                         <div class="profile">
                             <img src="{{asset('img/user-female.png')}}" alt="" srcset="">
                         </div>
@@ -191,6 +190,15 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="user-profile-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    @extends('Home.userprofile')
                 </div>
             </div>
         </div>

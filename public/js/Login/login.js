@@ -26,4 +26,63 @@ $(function(){
         $('.password').attr('type', 'password')
     })
 
+    $('#registerForm').submit(function(){
+        let formData = $(this).serialize();
+        $.ajax({
+            url:'/register',
+            type:'post',
+            data: formData
+        }).done((result)=>{
+            // console.log(result);
+            switch(result){
+                case 0:
+                    toastr.error(result)
+                    $('#password').val('');
+                    break
+                case 1:
+                    toastr.success(result)
+                    $('#regUsername').val('');
+                    $('#regPassword').val('');
+                    $('#loginNow').click();
+                    break
+                case 2:
+                    toastr.error('Email or mobile number already exist.')
+                    $('#password').val('');
+                    break
+                case 3:
+                    toastr.error('Invalid email address.')
+                    $('#password').val('');
+                    break
+                default: toastr.warning('All fields are required.');
+            }
+        }).fail({
+
+        })
+
+        return false;
+    })
+
+    $('#loginForm').submit(function(){
+        let formData = $(this).serialize();
+
+        $.ajax({
+            url:'/login-me',
+            type:'get',
+            data: formData
+        }).done(function(result){
+            // switch(result){
+            //     case '':
+            //         break;
+            //     case '':
+            //         break;
+            //     case '':
+            //         break;
+            // }
+            console.log(result);
+        }).fail({
+
+        })
+
+        return false;
+    })
 })
